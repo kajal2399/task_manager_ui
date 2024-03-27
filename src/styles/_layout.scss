@@ -1,0 +1,37 @@
+// _layout.scss
+.task-manager-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: $padding-small;
+    background-color: white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+  }
+  
+  .task-form {
+    display: flex;
+    gap: $padding-small;
+    margin-bottom: $padding-small;
+  }
+  
+  .task-form input[type="text"],
+  .task-form select {
+    flex: 1;
+    padding: $padding-small;
+    border: 1px solid $border-color;
+  }
+  
+  .task-list {
+    list-style-type: none;
+    padding-left: 0;
+  
+    li {
+      padding: $padding-small;
+      border-bottom: 1px solid $border-color;
+  
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  

@@ -1,0 +1,19 @@
+// _base.scss
+body {
+    font-family: Arial, sans-serif;
+    color: $text-color;
+    background-color: $background-color;
+  }
+  
+  button {
+    padding: $padding-small;
+    border: 1px solid $border-color;
+    background-color: $primary-color;
+    color: white;
+    cursor: pointer;
+  
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  

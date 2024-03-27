@@ -1,0 +1,49 @@
+TaskList.css
+
+.task-list-container {
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .task-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .task-table thead {
+    background-color: #f4f5f7;
+  }
+  
+  .task-table th,
+  .task-table td {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #e1e1e6;
+  }
+  
+  .task-table th {
+    position: sticky;
+    top: 0;
+  }
+  
+  .task-table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  button {
+    background-color: #d60b0b;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    margin-left: 4px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.85;
+  }
+  

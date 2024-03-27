@@ -1,0 +1,58 @@
+src/components/TaskForm.css
+
+.task-form-container {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .task-input-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .task-input,
+  .task-textarea,
+  .task-status-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .task-textarea {
+    height: 100px; /* Or whatever height you prefer */
+  }
+  
+  .task-status-select {
+    flex-grow: 1;
+  }
+  
+  .task-add-button {
+    padding: 10px 20px;
+    background-color: #0052cc; /* Jira's blue color */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .task-add-button:hover {
+    background-color: #003380;
+  }
+  
+  .task-add-button:disabled {
+    background-color: #ccd3d9;
+    cursor: not-allowed;
+  }
+  
