@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:3001';
+const API_BASE_URL = 'https://task-manager-api-5pjam.onrender.com';
 const api = {
   fetchTasks: () => axios.get(`${API_BASE_URL}/tasks`),
   createTask: (task) => axios.post(`${API_BASE_URL}/tasks`, task),
