@@ -35,18 +35,23 @@ function TaskForm({ onAddTask, tasks }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={title}
-        onChange={e => setTitle(e.target.value)}
-        placeholder="Title"
-        required
-      />
-      <textarea
-        value={description}
-        onChange={e => setDescription(e.target.value)}
-        placeholder="Description"
-      />
+      <div>
+        <input
+          type="text"
+          value={title}
+          onChange={e => setTitle(e.target.value)}
+          placeholder="Title"
+          required
+        />
+      </div>
+      <div>
+        <textarea
+          value={description}
+          onChange={e => setDescription(e.target.value)}
+          placeholder="Description"
+        />
+      </div>
+      <div>
       <select
         value={status}
         onChange={e => setStatus(e.target.value)}
@@ -56,6 +61,7 @@ function TaskForm({ onAddTask, tasks }) {
         <option value="In Progress">In Progress</option>
         <option value="Done">Done</option>
       </select>
+      </div>
       <button type="submit" disabled={status === 'To Do' && todoLimitReached()}>Add Task</button>
     </form>
   );

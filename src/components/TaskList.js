@@ -2,11 +2,27 @@
 
 import React, { useState } from 'react';
 import api from '../api/api'; // Adjust the relative path if necessary
-
+import Button from '@mui/material/Button';
 function TaskList({ tasks, onTasksChange }) {
-  // State for tracking the current filter
   const [filter, setFilter] = useState('All');
-
+  const [statusUpdates, setStatusUpdates] = useState({});
+  const handleUpdate = async (newStatus, task) => {
+    setStatusUpdates(prevStatuses => ({
+      ...prevStatuses,
+      [task.id]: newStatus
+    }));
+    
+    try {
+      await api.updateTask(task.id, {
+        "title": task.title,
+        "description": task.description,
+        "status": newStatus
+      });
+      onTasksChange(tasks.map(t => t.id === task.id ? { ...t, status: newStatus } : t));
+    } catch (error) {
+      console.error('Error updating task:', error);
+    }
+  };
   const handleDelete = async (id) => {
     try {
       await api.deleteTask(id);
@@ -16,7 +32,6 @@ function TaskList({ tasks, onTasksChange }) {
     }
   };
 
-  // Filter tasks based on the selected status
   const filteredTasks = tasks.filter(task => filter === 'All' || task.status === filter);
 
   return (
@@ -33,8 +48,15 @@ function TaskList({ tasks, onTasksChange }) {
       <ul>
         {filteredTasks.map(task => (
           <li key={task.id}>
-            {task.title} - {task.status}
-            <button onClick={() => handleDelete(task.id)}>Delete</button>
+            {task.title} - <select
+              value={statusUpdates[task.id] || task.status}
+              onChange={e => handleUpdate(e.target.value, task)}
+            >
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+            <Button variant="contained" color='success' onClick={() => handleDelete(task.id)}>Delete</Button>
           </li>
         ))}
       </ul>
