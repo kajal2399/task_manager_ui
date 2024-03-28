@@ -10,7 +10,6 @@ function TaskForm({ onAddTask, tasks }) {
   // A function to check if the "To Do" limit has been reached.
   const todoLimitReached = () => {
     const todoTasks = tasks.filter(task => task.status === 'To Do').length;
-    console.log(todoTasks, tasks)
     return todoTasks > 0 ? todoTasks >= tasks.length / 2 : false
   };
 

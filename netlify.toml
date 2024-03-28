@@ -1,0 +1,7 @@
+
+[[redirects]]
+  from = "/tasks/*"
+  to = "https://task-manager-api-5jam.onrender.com/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
